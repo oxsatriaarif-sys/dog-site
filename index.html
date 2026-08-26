@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>dog — Your chain, on a leash</title>
+<meta name="description" content="A command line for Solana. Read onchain state as objects, act on them, and a guard network that works after you close the terminal.">
+<link rel="icon" type="image/svg+xml" href="assets/dog.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/main.js" defer></script>
+</head>
+<body>
+
+<div class="statusbar" id="statusbar" role="status"><span class="statusbar-dot" aria-hidden="true"></span><span id="statusbar-text">network: alive · executors: 128 · P50 1.2s · block 312,441,882</span></div>
+
+<header class="site-nav"><div class="container nav-inner">
+<a class="brand" href="index.html"><img src="assets/dog.svg" alt="" width="28" height="28"><span>dog</span></a>
+<nav class="nav-links" id="nav-links" aria-label="Main"><a href="index.html" aria-current="page">Home</a><a href="commands.html">Commands</a><a href="guard.html">Guard</a><a href="security.html">Security</a><a href="scripts.html">Scripts</a><a href="pricing.html">Pricing</a><a href="docs.html">Docs</a><a href="changelog.html">Changelog</a><a href="token.html">Token</a></nav>
+<div class="nav-actions"><button class="palette-hint" id="palette-hint" aria-label="Open command palette (Ctrl+K)">⌘K</button><a class="btn btn-primary" href="#install">Install</a><button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu">☰</button></div>
+</div></header>
+
+<section class="section" id="top"><div class="container">
+<p class="section-eyebrow accent">● Solana, on a leash</p>
+<h1>Your chain, on a leash.</h1>
+<p class="lead mt-2">Onchain state is a kennel nobody learned to read. One grammar over it: read, filter, act — and a guard network that works while you sleep.</p>
+<div class="terminal-wrap mt-4" id="terminal">
+  <div class="terminal" id="terminal-window" role="application" tabindex="0" aria-label="dog terminal demo — click and type">
+    <div class="terminal-head"><span class="terminal-dot" style="background:#FF5F57"></span><span class="terminal-dot" style="background:#FEBC2E"></span><span class="terminal-dot" style="background:#28C840"></span><span class="terminal-title">dog@cli — demo</span></div>
+    <div class="terminal-body" id="terminal-body" aria-live="polite"></div>
+  </div>
+  <p class="terminal-hint">auto-playing — click the terminal and type. it's real. try 'help'.</p>
+</div>
+<div class="install-block mt-2" id="install"><code>brew install dog</code><button class="copy-btn" data-copy="brew install dog" aria-label="Copy install command">copy</button></div>
+<div class="install-block mt-1"><code>curl -fsSL dog.sh/install | sh</code><button class="copy-btn" data-copy="curl -fsSL dog.sh/install | sh" aria-label="Copy curl install command">copy</button></div>
+<div class="mt-2 text-center"><a class="btn btn-ghost" href="docs.html">Read the docs →</a></div>
+</div></section>
+
+<section class="section" data-reveal><div class="container">
+<p class="section-eyebrow">● Thesis</p>
+<div class="grid grid-2">
+<p>Everything built on Solana assumes state is complex and must be displayed: charts, cards, dashboards.</p>
+<p class="muted">Unix answered it differently. Reduce everything to one kind of object, give it a grammar, and let people assemble what they need. dog takes that bet further: your chain is a filesystem — and every file deserves a guard.</p>
+</div>
+</div></section>
+
+<section class="section" data-reveal><div class="container">
+<div class="grid grid-4">
+<article class="card">
+<svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+<h3>READ</h3>
+<p class="mono muted mt-1">dog, ls, grep, sort, diff, scan</p>
+<p class="mt-1">One object type, read one way. No defaults, no rankings.</p>
+</article>
+<article class="card">
+<svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8L19 10h-7l1-8Z"/></svg>
+<h3>ACT</h3>
+<p class="mono muted mt-1">sweep, hiss, nine</p>
+<p class="mt-1">Clean up dust, surface risk, roll back. Signing never leaves your machine.</p>
+</article>
+<article class="card">
+<svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.5 8-10V5l-8-3-8 3v7c0 6.5 8 10 8 10Z"/><path d="m9 11 2 2 4-4"/></svg>
+<h3>GUARD</h3>
+<p class="mono muted mt-1">nap, wake, watch, purr</p>
+<p class="mt-1">A condition is an object too. Close the laptop; the dog stays awake.</p>
+</article>
+<article class="card">
+<svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19.4 13c.04-.33.06-.66.06-1s-.02-.67-.06-1l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.61-.22l-2.39.96a7.3 7.3 0 0 0-1.73-1l-.36-2.54a.5.5 0 0 0-.5-.42h-3.84a.5.5 0 0 0-.5.42l-.36 2.54c-.63.26-1.21.6-1.73 1l-2.39-.96a.5.5 0 0 0-.61.22L2.23 8.78a.5.5 0 0 0 .12.64L4.38 11c-.04.33-.06.66-.06 1s.02.67.06 1l-2.03 1.58a.5.5 0 0 0-.12.64l1.92 3.32c.13.22.39.31.61.22l2.39-.96c.52.4 1.1.74 1.73 1l.36 2.54c.04.24.25.42.5.42h3.84c.25 0 .46-.18.5-.42l.36-2.54c.63-.26 1.21-.6 1.73-1l2.39.96c.22.09.48 0 .61-.22l1.92-3.32a.5.5 0 0 0-.12-.64L19.4 13Z"/><circle cx="12" cy="12" r="3"/></svg>
+<h3>COMPOSE</h3>
+<p class="mono muted mt-1">paw, fetch</p>
+<p class="mt-1">Save a pipe as a name. Fetch somebody else's. Pipes cover what buttons cannot.</p>
+</article>
+</div>
+</div></section>
+
+<section class="section" data-reveal><div class="container">
+<p class="section-eyebrow">● How it fits together</p>
+<div class="iso-figure" id="iso-figure">
+<svg viewBox="0 0 520 460" role="img" aria-labelledby="iso-title iso-desc">
+<title id="iso-title">dog architecture layers</title>
+<desc id="iso-desc">Four stacked isometric layers from bottom to top: READ, ACT, GUARD, COMPOSE, connected by a vertical spine.</desc>
+<g class="iso-node" data-tip="dog wallet" tabindex="0">
+<polygon class="iso-node-shape" points="260,330 420,400 260,470 100,400" fill="#11151A" stroke="#1E252D"/>
+<text x="260" y="405" fill="#E7EDF5" font-size="16" text-anchor="middle">READ</text>
+</g>
+<g class="iso-node" data-tip="| sweep" tabindex="0">
+<polygon class="iso-node-shape" points="260,250 420,320 260,390 100,320" fill="#11151A" stroke="#1E252D"/>
+<text x="260" y="325" fill="#E7EDF5" font-size="16" text-anchor="middle">ACT</text>
+</g>
+<g class="iso-node" data-tip="| guard --below 0.92" tabindex="0">
+<polygon class="iso-node-shape" points="260,170 420,240 260,310 100,240" fill="#11151A" stroke="#1E252D"/>
+<text x="260" y="245" fill="#E7EDF5" font-size="16" text-anchor="middle">GUARD</text>
+</g>
+<g class="iso-node" data-tip="| paw dust-sweep" tabindex="0">
+<polygon class="iso-node-shape" points="260,90 420,160 260,230 100,160" fill="#11151A" stroke="#1E252D"/>
+<text x="260" y="165" fill="#E7EDF5" font-size="16" text-anchor="middle">COMPOSE</text>
+</g>
+<line x1="260" y1="110" x2="260" y2="450" stroke="#1E252D"/>
+<circle cx="260" cy="160" r="4" fill="#1E252D"/>
+<circle cx="260" cy="240" r="4" fill="#1E252D"/>
+<circle cx="260" cy="320" r="4" fill="#1E252D"/>
+<circle cx="260" cy="400" r="4" fill="#1E252D"/>
+</svg>
+<div class="iso-tooltip" id="iso-tooltip" role="tooltip"></div>
+</div>
+<script>
+(function(){
+  var fig = document.getElementById('iso-figure');
+  var tip = document.getElementById('iso-tooltip');
+  function show(node){
+    tip.textContent = node.getAttribute('data-tip');
+    var fr = fig.getBoundingClientRect();
+    var nr = node.getBoundingClientRect();
+    tip.style.left = (nr.left - fr.left + nr.width / 2) + 'px';
+    tip.style.top = (nr.top - fr.top - 8) + 'px';
+    tip.classList.add('show');
+  }
+  function hide(){ tip.classList.remove('show'); }
+  fig.querySelectorAll('.iso-node').forEach(function(node){
+    node.addEventListener('mouseover', function(){ show(node); });
+    node.addEventListener('focus', function(){ show(node); });
+    node.addEventListener('mouseout', hide);
+    node.addEventListener('blur', hide);
+  });
+  fig.addEventListener('mouseleave', hide);
+})();
+</script>
+</div>
+</div></section>
+
+<section class="section" data-reveal><div class="container">
+<div class="metrics-band">
+<div class="stat"><span class="stat-value" id="stat-rent">1.42 SOL</span><span class="stat-label">rent swept <span class="stat-info" title="Cumulative rent recovered by sweep across all users, last 30 days">ⓘ</span></span></div>
+<div class="stat"><span class="stat-value" id="stat-fires">128</span><span class="stat-label">wake fires <span class="stat-info" title="Tasks executed by the guard network while terminals were closed, last 30 days">ⓘ</span></span></div>
+<div class="stat"><span class="stat-value" id="stat-delay">1.2s</span><span class="stat-label">fire delay P50 <span class="stat-info" title="Median time from condition met to signed submission">ⓘ</span></span></div>
+<div class="stat"><span class="stat-value" id="stat-exec">128</span><span class="stat-label">executors <span class="stat-info" title="Independent guards posting $DOG collateral">ⓘ</span></span></div>
+</div>
+</div></section>
+
+<section class="section" data-reveal><div class="container">
+<p class="section-eyebrow">● Questions</p>
+<details class="faq"><summary>Where do my keys go?</summary><div class="faq-body">Nowhere. Signing stays on your machine and dog never holds a key. What leaves is a single intent, bounded by a condition and an expiry. A guard can submit that intent and nothing else.</div></details>
+<details class="faq"><summary>What if a guard never runs my task?</summary><div class="faq-body">Guards post collateral and lose part of it for a task they took and missed. A task nobody executed is compensated from the shared pool. Not "we will do our best" — it costs us more not to.</div></details>
+<details class="faq"><summary>Will it tell me what to buy?</summary><div class="faq-body">No. dog shows you what is, and does what you say. Nothing is sorted by yield, nothing is marked worth a look. You get statements of fact and you decide.</div></details>
+<div class="mt-2"><a class="btn btn-ghost" href="docs.html">More in the docs →</a></div>
+</div></section>
+
+<section class="section" data-reveal id="cta"><div class="container text-center">
+<h2>Install it. Close the terminal. The dog stays awake.</h2>
+<div class="install-block mt-2"><code>brew install dog</code><button class="copy-btn" data-copy="brew install dog" aria-label="Copy install command">copy</button></div>
+<div class="install-block mt-1"><code>curl -fsSL dog.sh/install | sh</code><button class="copy-btn" data-copy="curl -fsSL dog.sh/install | sh" aria-label="Copy curl install command">copy</button></div>
+<div class="mt-2"><a class="btn btn-ghost" href="pricing.html">See what it costs →</a></div>
+</div></section>
+
+<footer class="site-footer"><div class="container">
+<div class="footer-grid">
+<div class="footer-col"><a class="brand" href="index.html"><img src="assets/dog.svg" alt="" width="28" height="28"><span>dog</span></a><p class="muted" style="font-size:14px;max-width:280px">A command line for Solana. Read onchain state as objects, act on them, and let a guard watch while you sleep.</p></div>
+<div class="footer-col"><h4>Product</h4><a href="commands.html">Commands</a><a href="guard.html">Guard</a><a href="scripts.html">Scripts</a><a href="pricing.html">Pricing</a></div>
+<div class="footer-col"><h4>Resources</h4><a href="docs.html">Docs</a><a href="changelog.html">Changelog</a><a href="security.html">Security</a></div>
+<div class="footer-col"><h4>Community</h4><a href="token.html">$DOG token</a><a href="https://x.com/" target="_blank" rel="noopener">X / Twitter</a><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></div>
+</div>
+<div class="install-block mt-2"><code>brew install dog</code><button class="copy-btn" data-copy="brew install dog" aria-label="Copy install command">copy</button></div>
+<div class="footer-bottom"><span>© dog, 2026 — demo concept</span><span class="mono">your chain, on a leash</span></div>
+</div></footer>
+
+<div class="palette-overlay" id="palette" hidden><div class="palette" role="dialog" aria-modal="true" aria-label="Command palette"><input id="palette-input" type="text" placeholder="Type a command or page…" aria-label="Search commands and pages" autocomplete="off"><ul id="palette-results" role="listbox" aria-label="Results"></ul></div></div>
+
+</body>
+</html>

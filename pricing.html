@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="dog pricing — what runs on your machine is free. Only the guard network costs a small held balance, and an interactive calculator shows how much.">
+  <title>dog — Pricing</title>
+  <link rel="icon" type="image/svg+xml" href="assets/dog.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+<div class="statusbar" id="statusbar" role="status"><span class="statusbar-dot" aria-hidden="true"></span><span id="statusbar-text">network: alive · executors: 128 · P50 1.2s · block 312,441,882</span></div>
+
+<header class="site-nav"><div class="container nav-inner"><a class="brand" href="index.html"><img src="assets/dog.svg" alt="" width="28" height="28"><span>dog</span></a><nav class="nav-links" id="nav-links" aria-label="Main"><a href="index.html">Home</a><a href="commands.html">Commands</a><a href="guard.html">Guard</a><a href="security.html">Security</a><a href="scripts.html">Scripts</a><a href="pricing.html" aria-current="page">Pricing</a><a href="docs.html">Docs</a><a href="changelog.html">Changelog</a><a href="token.html">Token</a></nav><div class="nav-actions"><button class="palette-hint" id="palette-hint" aria-label="Open command palette (Ctrl+K)">⌘K</button><a class="btn btn-primary" href="index.html#install">Install</a><button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu">☰</button></div></div></header>
+
+<main class="container">
+
+  <section class="section">
+    <p class="section-eyebrow mono">pricing</p>
+    <h1>What runs on your machine is free.</h1>
+    <p class="lead">The network costs money to run, so only the network costs you. Reading, filtering and signing stay local — and stay free.</p>
+  </section>
+
+  <section class="section mt-2" data-reveal>
+    <div class="grid grid-2">
+
+      <div class="price-card">
+        <span class="badge">free</span>
+        <p class="mono muted" style="font-size:14px;margin-top:16px">LOCAL</p>
+        <p class="price">Free</p>
+        <p>Everything that runs on your machine. No balance, no account.</p>
+        <ul class="mt-1">
+          <li>Read, filter and sign</li>
+          <li>Write and run scripts</li>
+          <li>Your own RPC, your rules</li>
+        </ul>
+        <a class="btn btn-primary mt-2" href="index.html#install">brew install dog</a>
+      </div>
+
+      <div class="price-card featured">
+        <span class="badge badge-amber">network</span>
+        <p class="mono muted" style="font-size:14px;margin-top:16px">GUARD</p>
+        <p class="price">$90 <span class="muted" style="font-size:1rem">held</span></p>
+        <p>For tasks that must outlive the terminal you closed. Held, not spent — it covers your horizon.</p>
+        <ul class="mt-1">
+          <li>Fire on a condition</li>
+          <li>Keep watching after you close it</li>
+          <li>Guards post collateral</li>
+        </ul>
+        <a class="btn btn-ghost mt-2" href="guard.html">How guarding works →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section mt-2" data-reveal>
+    <h2 class="cmd-group-title">Compare</h2>
+    <table class="compare-table">
+      <thead>
+        <tr><th scope="col"><span class="visually-hidden">Feature</span></th><th scope="col">LOCAL</th><th scope="col">GUARD</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Execution</th><td>your machine</td><td>guard network</td></tr>
+        <tr><th scope="row">Token balance</th><td>not needed</td><td>covers your horizon</td></tr>
+        <tr><th scope="row">Scripts</th><td>write and run</td><td>write, run, schedule</td></tr>
+        <tr><th scope="row">Read, filter, sign</th><td><span class="green">✓</span></td><td><span class="green">✓</span></td></tr>
+        <tr><th scope="row">Fire on a condition</th><td><span class="muted">—</span></td><td><span class="green">✓</span></td></tr>
+        <tr><th scope="row">Watch after close</th><td><span class="muted">—</span></td><td><span class="green">✓</span></td></tr>
+        <tr><th scope="row">RPC</th><td>your own</td><td>your own + guard RPC</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="section mt-2" data-reveal>
+    <h2 class="cmd-group-title">How much do I need to hold?</h2>
+    <div class="calc" id="calc">
+      <label for="calc-days" class="mono">days your task must survive</label>
+      <input id="calc-days" type="range" min="1" max="365" value="90" aria-label="Days the task must survive">
+      <p class="mt-1"><span id="calc-days-out" class="mono accent">90 days</span></p>
+      <p class="mt-1">required balance: <span id="calc-result" class="calc-value">0.500 SOL held</span></p>
+      <p id="calc-explain" class="muted mt-1" style="font-size:13px">ceil(90/30) months × $30, at a $180/SOL example rate — example, not advice.</p>
+    </div>
+  </section>
+
+  <section class="section mt-2">
+    <div class="install-block"><code>brew install dog</code><button class="copy-btn" data-copy="brew install dog" aria-label="Copy install command">copy</button></div>
+    <p class="mt-2"><a href="guard.html">Read how guarding works →</a></p>
+  </section>
+
+</main>
+
+<footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-col"><a class="brand" href="index.html"><img src="assets/dog.svg" alt="" width="28" height="28"><span>dog</span></a><p class="muted" style="font-size:14px;max-width:280px">A command line for Solana. Read onchain state as objects, act on them, and let a guard watch while you sleep.</p></div><div class="footer-col"><h4>Product</h4><a href="commands.html">Commands</a><a href="guard.html">Guard</a><a href="scripts.html">Scripts</a><a href="pricing.html">Pricing</a></div><div class="footer-col"><h4>Resources</h4><a href="docs.html">Docs</a><a href="changelog.html">Changelog</a><a href="security.html">Security</a></div><div class="footer-col"><h4>Community</h4><a href="token.html">$DOG token</a><a href="https://x.com/" target="_blank" rel="noopener">X / Twitter</a><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></div></div><div class="install-block mt-2"><code>brew install dog</code><button class="copy-btn" data-copy="brew install dog" aria-label="Copy install command">copy</button></div><div class="footer-bottom"><span>© dog, 2026 — demo concept</span><span class="mono">your chain, on a leash</span></div></div></footer>
+
+<div class="palette-overlay" id="palette" hidden><div class="palette" role="dialog" aria-modal="true" aria-label="Command palette"><input id="palette-input" type="text" placeholder="Type a command or page…" aria-label="Search commands and pages" autocomplete="off"><ul id="palette-results" role="listbox" aria-label="Results"></ul></div></div>
+
+</body>
+</html>

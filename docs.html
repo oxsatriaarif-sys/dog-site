@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The dog manual — install, every command, every flag, and what each one refuses to do. Reading, action, time, composition, output, and errors.">
+  <title>dog — Docs</title>
+  <link rel="icon" type="image/svg+xml" href="assets/dog.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+<div class="statusbar" id="statusbar" role="status"><span class="statusbar-dot" aria-hidden="true"></span><span id="statusbar-text">network: alive · executors: 128 · P50 1.2s · block 312,441,882</span></div>
+
+<header class="site-nav"><div class="container nav-inner"><a class="brand" href="index.html"><img src="assets/dog.svg" alt="" width="28" height="28"><span>dog</span></a><nav class="nav-links" id="nav-links" aria-label="Main"><a href="index.html">Home</a><a href="commands.html">Commands</a><a href="guard.html">Guard</a><a href="security.html">Security</a><a href="scripts.html">Scripts</a><a href="pricing.html">Pricing</a><a href="docs.html" aria-current="page">Docs</a><a href="changelog.html">Changelog</a><a href="token.html">Token</a></nav><div class="nav-actions"><button class="palette-hint" id="palette-hint" aria-label="Open command palette (Ctrl+K)">⌘K</button><a class="btn btn-primary" href="index.html#install">Install</a><button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu">☰</button></div></div></header>
+
+<main class="container">
+<div class="docs-layout">
+
+<aside class="docs-sidebar" data-reveal>
+  <div class="docs-group">
+    <h4>Install</h4>
+    <a class="doc-entry" href="#install">Install</a>
+  </div>
+  <div class="docs-group">
+    <h4>Reading</h4>
+    <a class="doc-entry" href="#doc-dog">dog</a>
+    <a class="doc-entry" href="#doc-ls">ls</a>
+    <a class="doc-entry" href="#doc-grep">grep</a>
+    <a class="doc-entry" href="#doc-sort">sort</a>
+    <a class="doc-entry" href="#doc-diff">diff</a>
+    <a class="doc-entry" href="#doc-scan">scan</a>
+  </div>
+  <div class="docs-group">
+    <h4>Action</h4>
+    <a class="doc-entry" href="#doc-sweep">sweep</a>
+    <a class="doc-entry" href="#doc-hiss">hiss</a>
+    <a class="doc-entry" href="#doc-nine">nine</a>
+  </div>
+  <div class="docs-group">
+    <h4>Time</h4>
+    <a class="doc-entry" href="#doc-nap">nap</a>
+    <a class="doc-entry" href="#doc-wake">wake</a>
+    <a class="doc-entry" href="#doc-watch">watch</a>
+    <a class="doc-entry" href="#doc-purr">purr</a>
+  </div>
+  <div class="docs-group">
+    <h4>Composition</h4>
+    <a class="doc-entry" href="#doc-paw">paw</a>
+    <a class="doc-entry" href="#doc-fetch">fetch</a>
+  </div>
+  <div class="docs-group">
+    <h4>Output</h4>
+    <a class="doc-entry" href="#doc-chart">chart</a>
+    <a class="doc-entry" href="#doc-export">export</a>
+  </div>
+  <div class="docs-group">
+    <h4>Errors</h4>
+    <a class="doc-entry" href="#errors">Errors &amp; refusals</a>
+  </div>
+</aside>
+
+<div>
+
+<section class="section" data-reveal>
+  <p class="section-eyebrow">docs</p>
+  <h1>The manual.</h1>
+  <p class="lead">Every command, every flag, and what each one refuses to do.</p>
+</section>
+
+<section class="section" id="install" data-reveal>
+  <h2 class="cmd-group-title">Install</h2>
+  <div class="install-block mt-1"><code>brew install dog</code><button class="copy-btn" data-copy="brew install dog" aria-label="Copy install command">copy</button></div>
+  <div class="install-block mt-1"><code>curl -fsSL https://dog.sh/install.sh | sh</code><button class="copy-btn" data-copy="curl -fsSL https://dog.sh/install.sh | sh" aria-label="Copy install command">copy</button></div>
+  <p class="muted mt-1">Or grab a static binary from GitHub releases. No runtime, no daemon, no key storage.</p>
+</section>
+
+<h2 class="cmd-group-title">Reading</h2>
+
+<div class="doc-entry" id="doc-dog" data-reveal>
+  <h3 class="mono">dog</h3>
+  <code class="cmd-syntax">dog &lt;object&gt;</code>
+  <p>Show the contents of an object. A wallet is its balances; a position is its collateral and health. dog prints objects, not tables — which is why everything else can read them.</p>
+  <div class="cmd-example"><code>dog wallet</code><button class="copy-btn" data-copy="dog wallet" aria-label="Copy example">copy</button></div>
+</div>
+
+<div class="doc-entry" id="doc-ls" data-reveal>
+  <h3 class="mono">ls</h3>
+  <code class="cmd-syntax">ls &lt;context&gt;</code>
+  <p>List the objects in the current context. ls never paginates silently: if there is more than one screen, it says so.</p>
+  <div class="cmd-example"><code>ls positions</code><button class="copy-btn" data-copy="ls positions" aria-label="Copy example">copy</button></div>
+</div>
+
+<div class="doc-entry" id="doc-grep" data-reveal>
+  <h3 class="mono">grep</h3>
+  <code class="cmd-syntax">… | grep &lt;field&gt;</code>
+  <p>Filter a stream by a field you name. grep works on any field any command emits, because every command speaks the same object grammar.</p>
+  <div class="cmd-example"><code>dog wallet | grep dust</code><button class="copy-btn" data-copy="dog wallet | grep dust" aria-label="Copy example">copy</button></div>
+</div>
+
+<div class="doc-entry" id="doc-sort" data-reveal>
+  <h3 class="mono">sort</h3>
+  <code class="cmd-syntax">… | sort &lt;field&gt;</code>
+  <p>Order by a named field. There is no default order — an unordered list prints in chain order and says so.</p>
+  <div class="cmd-example"><code>ls positions | sort pnl</code><button class="copy-btn" data-copy="ls positions | sort pnl" aria-label="Copy example">copy</button></div>
+</div>
+
+<div class="doc-entry" id="doc-diff" data-reveal>
+  <h3 class="mono">diff</h3>
+  <code class="cmd-syntax">diff &lt;object&gt; --since &lt;t&gt;</code>
+  <p>Compare two states of the same object. diff shows what changed, when it changed, and which signature did it.</p>
+  <div class="cmd-example"><code>diff wallet --since 7d</code><button class="copy-btn" data-copy="diff wallet --since 7d" aria-label="Copy example">copy</button></div>
+</div>
+
+<div class="doc-entry" id="doc-scan" data-reveal>
+  <h3 class="mono">scan</h3>
+  <code class="cmd-syntax">scan &lt;scope&gt;</code>
+  <p>Walk state and print what is found. scan reads; it never writes, and it stops politely when you press Ctrl-C.</p>
+  <div class="cmd-example"><code>scan approvals</code><button class="copy-btn" data-copy="scan approvals" aria-label="Copy example">copy</button></div>
+</div>
+
+<h2 class="cmd-group-title">Action</h2>
+
+<div class="doc-entry" id="doc-sweep" data-reveal>
+  <h3 class="mono">sweep</h3>
+  <code class="cmd-syntax">… | sweep</code>
+  <p>Close what is piped in: dust tokens, empty accounts, stale approvals. Returns the rent. sweep refuses anything that was not explicitly piped into it.</p>
+  <div class="cmd-example"><code>dog wallet | grep dust | sweep</code><button class="copy-btn" data-copy="dog wallet | grep dust | sweep" aria-label="Copy example">copy</button></div>
+</div>
+
+<div class="doc-entry" id="doc-hiss" data-reveal>
+  <h3 class="mono">hiss</h3>
+  <code class="cmd-syntax">hiss</code>
+  <p>Show what is dangerous: open approvals, suspicious signatures. hiss is read-only by design — pointing at a thing is not the same as touching it.</p>
+  <div class="cmd-example"><code>hiss | sort age</code><button class="copy-btn" data-copy="hiss | sort age" aria-label="Copy example">copy</button></div>
+</div>
+
+<div class="doc-entry" id="doc-nine" data-reveal>
+  <h3 class="mono">nine</h3>
+  <code class="cmd-syntax">nine</code>
+  <p>Roll back the last action, and say plainly what cannot be undone. When a swap has settled, nine tells you so instead of pretending.</p>
+  <div class="cmd-example"><code>nine</code><button class="copy-btn" data-copy="nine" aria-label="Copy example">copy</button></div>
+</div>
+
+<h2 class="cmd-group-title">Time</h2>
+
+<div class="doc-entry" id="doc-nap" data-reveal>
+  <h3 class="mono">nap</h3>
+  <code class="cmd-syntax">nap &lt;task&gt; --in &lt;t&gt; | --every &lt;t&gt;</code>
+  <p>Defer a task, once or on a repeat. A napped task runs with the same permissions you gave it when you typed it — no more.</p>
+  <div class="cmd-example"><code>nap rent-check --every 30d</code><button class="copy-btn" data-copy="nap rent-check --every 30d" aria-label="Copy example">copy</button></div>
+</div>
+
+<div class="doc-entry" id="doc-wake" data-reveal>
+  <h3 class="mono">wake</h3>
+  <code class="cmd-syntax">wake "&lt;pipe&gt;" &lt;condition&gt;</code>
+  <p>Execute when a condition is met, whether or not you are there. wake shows you the exact pipe it will run before arming, and waits for your confirmation.</p>
+  <div class="cmd-example"><code>wake "ls positions | grep MNGO | close" --below 0.92</code><button class="copy-btn" data-copy='wake "ls positions | grep MNGO | close" --below 0.92' aria-label="Copy example">copy</button></div>
+  <div class="cmd-example mt-1"><code>wake "dog wallet | export" --every 24h</code><button class="copy-btn" data-copy='wake "dog wallet | export" --every 24h' aria-label="Copy example">copy</button></div>
+</div>
+
+<div class="doc-entry" id="doc-watch" data-reveal>
+  <h3 class="mono">watch</h3>
+  <code class="cmd-syntax">watch &lt;target&gt; &lt;condition&gt;</code>
+  <p>Monitor and notify, doing nothing else. Free while the terminal is open. watch cannot act, even if you ask it to — that is what wake is for.</p>
+  <div class="cmd-example"><code>watch MNGO/USDC --below 0.92</code><button class="copy-btn" data-copy="watch MNGO/USDC --below 0.92" aria-label="Copy example">copy</button></div>
+</div>
+
+<div class="doc-entry" id="doc-purr" data-reveal>
+  <h3 class="mono">purr</h3>
+  <code class="cmd-syntax">purr</code>
+  <p>Status of background tasks: what is armed and what it waits for. purr also disarms, with <span class="mono">--disarm &lt;id&gt;</span>.</p>
+  <div class="cmd-example"><code>purr</code><button class="copy-btn" data-copy="purr" aria-label="Copy example">copy</button></div>
+  <div class="cmd-example mt-1"><code>purr --disarm w-042</code><button class="copy-btn" data-copy="purr --disarm w-042" aria-label="Copy example">copy</button></div>
+</div>
+
+<h2 class="cmd-group-title">Composition</h2>
+
+<div class="doc-entry" id="doc-paw" data-reveal>
+  <h3 class="mono">paw</h3>
+  <code class="cmd-syntax">… | paw &lt;name&gt;</code>
+  <p>Save a pipe as a named script. The script is stored verbatim — exactly the text that flowed through the pipe, nothing inferred.</p>
+  <div class="cmd-example"><code>dog wallet | grep dust | sweep | paw dust-sweep</code><button class="copy-btn" data-copy="dog wallet | grep dust | sweep | paw dust-sweep" aria-label="Copy example">copy</button></div>
+</div>
+
+<div class="doc-entry" id="doc-fetch" data-reveal>
+  <h3 class="mono">fetch</h3>
+  <code class="cmd-syntax">fetch @&lt;handle&gt;/&lt;script&gt;</code>
+  <p>Load someone else's script by handle and name. fetch prints the whole script before running it, and asks once.</p>
+  <div class="cmd-example"><code>fetch @nine/rent-check</code><button class="copy-btn" data-copy="fetch @nine/rent-check" aria-label="Copy example">copy</button></div>
+</div>
+
+<h2 class="cmd-group-title">Output</h2>
+
+<div class="doc-entry" id="doc-chart" data-reveal>
+  <h3 class="mono">chart</h3>
+  <code class="cmd-syntax">… | chart</code>
+  <p>Render a stream instead of listing it. chart works on anything with a numeric field, because it receives objects like everyone else.</p>
+  <div class="cmd-example"><code>diff wallet --since 7d | chart</code><button class="copy-btn" data-copy="diff wallet --since 7d | chart" aria-label="Copy example">copy</button></div>
+</div>
+
+<div class="doc-entry" id="doc-export" data-reveal>
+  <h3 class="mono">export</h3>
+  <code class="cmd-syntax">… | export</code>
+  <p>Dump a stream in a form other tools can read. JSON by default; CSV with <span class="mono">--csv</span>.</p>
+  <div class="cmd-example"><code>dog wallet | export</code><button class="copy-btn" data-copy="dog wallet | export" aria-label="Copy example">copy</button></div>
+</div>
+
+<section class="section" id="errors" data-reveal>
+  <h2 class="cmd-group-title">Errors &amp; refusals</h2>
+  <div class="card faq mt-1">
+    <h3>Errors speak in the first person</h3>
+    <div class="faq-body">
+      <p class="mono">dog did not do this</p>
+      <p class="mono">nine cannot undo: the swap settled</p>
+      <p class="mono">hiss found nothing to bark at</p>
+      <p class="muted mt-1">No exit codes as personality. The error names itself, states what happened, and stops.</p>
+    </div>
+  </div>
+  <div class="card faq mt-2">
+    <h3>What dog will not do</h3>
+    <div class="faq-body">
+      <ul>
+        <li>No key storage — keys stay in your wallet, always.</li>
+        <li>No autonomous action — every acting task was typed by you first.</li>
+        <li>No advice — dog reports state; it does not have opinions about it.</li>
+        <li>No commands that don't pipe — if it can't compose, it doesn't ship.</li>
+      </ul>
+      <p class="mt-2"><a class="accent" href="security.html">Read the full security model →</a></p>
+    </div>
+  </div>
+</section>
+
+</div>
+</div>
+</main>
+
+<footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-col"><a class="brand" href="index.html"><img src="assets/dog.svg" alt="" width="28" height="28"><span>dog</span></a><p class="muted" style="font-size:14px;max-width:280px">A command line for Solana. Read onchain state as objects, act on them, and let a guard watch while you sleep.</p></div><div class="footer-col"><h4>Product</h4><a href="commands.html">Commands</a><a href="guard.html">Guard</a><a href="scripts.html">Scripts</a><a href="pricing.html">Pricing</a></div><div class="footer-col"><h4>Resources</h4><a href="docs.html">Docs</a><a href="changelog.html">Changelog</a><a href="security.html">Security</a></div><div class="footer-col"><h4>Community</h4><a href="token.html">$DOG token</a><a href="https://x.com/" target="_blank" rel="noopener">X / Twitter</a><a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></div></div><div class="install-block mt-2"><code>brew install dog</code><button class="copy-btn" data-copy="brew install dog" aria-label="Copy install command">copy</button></div><div class="footer-bottom"><span>© dog, 2026 — demo concept</span><span class="mono">your chain, on a leash</span></div></div></footer>
+
+<div class="palette-overlay" id="palette" hidden><div class="palette" role="dialog" aria-modal="true" aria-label="Command palette"><input id="palette-input" type="text" placeholder="Type a command or page…" aria-label="Search commands and pages" autocomplete="off"><ul id="palette-results" role="listbox" aria-label="Results"></ul></div></div>
+
+</body>
+</html>
