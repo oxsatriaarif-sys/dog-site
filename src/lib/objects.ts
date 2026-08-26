@@ -182,8 +182,8 @@ export const MOCK_OBJECTS: DemoWalletBundle = {
     id: DEMO_ADDR,
     address: DEMO_ADDR,
     chainId: 1,
-    label: "demo-wallet",
-    ens: "watchdog-demo.eth",
+    label: "primary-wallet",
+    ens: "watchdog.eth",
     balanceUsd: 48291.4,
     risk: "high",
     watched: true,
@@ -209,7 +209,7 @@ export const MOCK_OBJECTS: DemoWalletBundle = {
     { kind: "transaction", id: "0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef", hash: "0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef", chainId: 1, from: "0x0000000000000000000000000000000000000000", to: DEMO_ADDR, value: "0", status: "pending", method: "unknown", risk: "critical", timestamp: "2026-08-26T09:12:00.000Z" },
   ],
   tasks: [
-    { kind: "task", id: "task_01", name: "watch-demo-wallet", command: "watch wallet 0x7a3e…09a", status: "running", createdAt: "2026-08-20T10:00:00.000Z", updatedAt: "2026-08-26T09:00:00.000Z", nextRunAt: "2026-08-26T09:15:00.000Z" },
+    { kind: "task", id: "task_01", name: "watch-wallet", command: "watch wallet 0x7a3e…09a", status: "running", createdAt: "2026-08-20T10:00:00.000Z", updatedAt: "2026-08-26T09:00:00.000Z", nextRunAt: "2026-08-26T09:15:00.000Z" },
     { kind: "task", id: "task_02", name: "guard-unlimited-approvals", command: "guard wallet --rule no-unlimited", status: "idle", createdAt: "2026-08-21T12:00:00.000Z", updatedAt: "2026-08-25T18:00:00.000Z", nextRunAt: null },
   ],
   alerts: [

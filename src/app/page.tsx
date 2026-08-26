@@ -87,9 +87,9 @@ export default function Home(){
             </div>
           </div>
           <div id="command" className="md:sticky md:top-[88px]">
-            <div className="font-mono text-[10px] tracking-[0.14em] uppercase text-[#989A95] mb-2">LIVE CONSOLE — SAFE DEMO, NO WALLET</div>
+            <div className="font-mono text-[10px] tracking-[0.14em] uppercase text-[#989A95] mb-2">LIVE CONSOLE — REAL TIME</div>
             <DogConsole autoFocus />
-            <div className="mt-2 font-mono text-[11px] text-[#989A95]">Try: <span className="text-[#ECEBE5]">sniff demo-wallet</span> → <span className="text-[#ECEBE5]">guard demo-wallet</span> → <span className="text-[#ECEBE5]">watch SOL --below 120</span></div>
+            <div className="mt-2 font-mono text-[11px] text-[#989A95]">Try: <span className="text-[#ECEBE5]">sniff 0x7a3e...09a</span> → <span className="text-[#ECEBE5]">guard wallet</span> → <span className="text-[#ECEBE5]">watch WETH --below 2800</span></div>
           </div>
         </div>
       </section>
@@ -112,7 +112,7 @@ export default function Home(){
               ["approval","WETH → 1inch","unlimited","high"],
               ["pool","WETH/USDC 0.3%","TVL $12.4M","med"],
               ["transaction","approve","confirmed","med"],
-              ["task","watch-demo-wallet","running","—"],
+              ["task","watch-wallet","running","—"],
               ["risk-event","phishing probe","critical","crit"],
             ].map(([k,v,amt,r])=> (
               <div key={k} className="p-4 bg-[#121414]">
@@ -162,17 +162,17 @@ export default function Home(){
             <Eyebrow>04 — WATCH</Eyebrow>
             <h2 className="mt-2 font-sans text-[26px] font-bold">Passive monitoring.<br /><span className="text-[#989A95]">WATCH does not execute.</span></h2>
             <div className="mt-4 border border-[#242626] bg-[#0C0D0D] p-4 font-mono text-[12px] leading-relaxed">
-              <div className="text-[#989A95]">track SOL</div>
-              <div className="text-[#ECEBE5]">watch --below 120</div>
+              <div className="text-[#989A95]">track WETH</div>
+              <div className="text-[#ECEBE5]">watch --below 2800</div>
               <div className="text-[#FF6B22]">bark</div>
               <div className="mt-3 text-[#989A95]">— WATCH is a condition, not a transaction. DOG quietly evaluates. When matched, it barks. It never bites unless you said so.</div>
             </div>
           </div>
           <div className="border border-[#242626] bg-[#121414] p-4">
-            <div className="font-mono text-[10px] tracking-[0.14em] uppercase text-[#FF6B22]">WATCH PREVIEW — SOL</div>
+            <div className="font-mono text-[10px] tracking-[0.14em] uppercase text-[#FF6B22]">WATCH PREVIEW — WETH</div>
             <div className="mt-3 grid grid-cols-2 gap-3 font-mono text-[11px]">
-              <div className="border border-[#242626] bg-[#0C0D0D] p-3"><div className="text-[#989A95] uppercase tracking-[0.08em]">Asset</div><div className="text-[#ECEBE5]">SOL</div></div>
-              <div className="border border-[#242626] bg-[#0C0D0D] p-3"><div className="text-[#989A95] uppercase tracking-[0.08em]">Condition</div><div className="text-[#ECEBE5]">price ≤ $120</div></div>
+              <div className="border border-[#242626] bg-[#0C0D0D] p-3"><div className="text-[#989A95] uppercase tracking-[0.08em]">Asset</div><div className="text-[#ECEBE5]">WETH</div></div>
+              <div className="border border-[#242626] bg-[#0C0D0D] p-3"><div className="text-[#989A95] uppercase tracking-[0.08em]">Condition</div><div className="text-[#ECEBE5]">price ≤ $2800</div></div>
               <div className="border border-[#242626] bg-[#0C0D0D] p-3"><div className="text-[#989A95] uppercase tracking-[0.08em]">Action</div><div className="text-[#ECEBE5]">notify only</div></div>
               <div className="border border-[#242626] bg-[#0C0D0D] p-3"><div className="text-[#989A95] uppercase tracking-[0.08em]">Duration</div><div className="text-[#ECEBE5]">24h</div></div>
             </div>
@@ -192,8 +192,8 @@ export default function Home(){
             <div className="p-4 font-mono text-[12px] leading-relaxed">
               <div className="text-[#ECEBE5] font-bold">DOG MAY:</div>
               <div className="mt-2 grid gap-1 text-[#ECEBE5]">
-                <div><span className="text-[#989A95]">SELL</span> Token: SOL — Maximum: 2 SOL</div>
-                <div><span className="text-[#989A95]">Trigger:</span> SOL ≤ $120</div>
+                <div><span className="text-[#989A95]">SELL</span> Token: WETH — Maximum: 2 WETH</div>
+                <div><span className="text-[#989A95]">Trigger:</span> WETH ≤ $2800</div>
                 <div><span className="text-[#989A95]">Max slippage:</span> 0.8% · <span className="text-[#989A95]">Executions:</span> 1 · <span className="text-[#989A95]">Expires:</span> 24h</div>
                 <div><span className="text-[#989A95]">Destination:</span> Owner wallet</div>
               </div>
@@ -215,7 +215,7 @@ export default function Home(){
             <h3 className="font-sans text-[20px] font-bold">Bite is explicit, bounded, previewable.</h3>
             <p className="mt-2 text-[13px] leading-relaxed text-[#989A95]">Never implicit. Every bite is a <span className="text-[#ECEBE5]">bounded execution intent</span> you sign. Show trigger, planned action, estimated output, gas, slippage, contract, wallet impact, risk warnings — then <span className="text-[#ECEBE5]">--dry-run</span>.</p>
             <div className="mt-4 border border-[#242626] bg-[#0C0D0D] p-3 font-mono text-[12px]">
-              <div className="text-[#989A95]">$ bite swap SOL USDC --amount 2 --dry-run</div>
+              <div className="text-[#989A95]">$ bite swap WETH USDC --amount 2 --dry-run</div>
               <div className="mt-2 text-[#ECEBE5]">SIMULATING → SIMULATION COMPLETE → EXPECTED RESULT → AUTHORIZE</div>
               <div className="mt-2 text-[#989A95]">Never make a dangerous action look like a normal button.</div>
             </div>
@@ -263,7 +263,7 @@ export default function Home(){
             <h2 className="mt-2 font-sans text-[26px] font-bold">Close the laptop. DOG stays awake.</h2>
             <p className="mt-3 text-[13px] leading-relaxed text-[#989A95]">Stay keeps a job running. The remote executor holds only the signed intent — nothing broader. You can <span className="text-[#ECEBE5]">heel</span> to pause, <span className="text-[#ECEBE5]">recall</span> to revoke.</p>
             <div className="mt-4 font-mono text-[11px] border border-[#242626] bg-[#121414] p-3">
-              <div><span className="text-[#989A95]">$</span> stay watch SOL --below 120</div>
+              <div><span className="text-[#989A95]">$</span> stay watch WETH --below 2800</div>
               <div className="text-[#2E7D5B]">✔ persistent — continues after close</div>
               <div className="text-[#989A95]">remote executor: holds bounded intent only</div>
             </div>
@@ -288,9 +288,9 @@ export default function Home(){
         <div className="mt-4 border border-[#242626] bg-[#121414] overflow-hidden">
           <div className="divide-y divide-[#242626] font-mono text-[12px]">
             {[
-              ["RULE CREATED","watch SOL --below 120","14:31:02 UTC","#242626"],
-              ["AUTHORIZATION SIGNED","max 2 SOL · slippage 0.8%","14:31:18 UTC","#242626"],
-              ["CONDITION MATCHED","SOL $119.40 ≤ $120","14:32:17 UTC","#FF6B22"],
+              ["RULE CREATED","watch WETH --below 2800","14:31:02 UTC","#242626"],
+              ["AUTHORIZATION SIGNED","max 2 WETH · slippage 0.8%","14:31:18 UTC","#242626"],
+              ["CONDITION MATCHED","WETH $2780 ≤ $2800","14:32:17 UTC","#FF6B22"],
               ["SIMULATION PASSED","expected 238 USDC · gas 0.00041","14:32:17 UTC","#2E7D5B"],
               ["EXECUTION SENT","0x9f1e…e1f2","14:32:18 UTC","#ECEBE5"],
               ["CONFIRMED","block 312,441,903","14:32:19 UTC","#2E7D5B"],
