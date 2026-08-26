@@ -23,7 +23,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "DOG — Onchain Watchdog",
   description: "watches chain so you dont have to",
-  icons: { icon: [{ url: "/dog.svg", type: "image/svg+xml" }, { url: "/favicon.ico", sizes: "any" }] },
+  icons: { icon: [{ url: "/dog-mark.jpg", type: "image/jpeg" }, { url: "/dog.svg", type: "image/svg+xml" }, { url: "/favicon.ico", sizes: "any" }] },
   openGraph: {
     title: "DOG — Onchain Watchdog",
     description: "watches chain so you dont have to",

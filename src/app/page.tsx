@@ -12,9 +12,9 @@ const NAV = [
 
 function Mark({ size=40 }: { size?: number }){
   return (
-    <div className="relative shrink-0" style={{ width: size, height: size }}>
+    <div className="relative shrink-0 overflow-hidden rounded-[2px] border border-[#242626] bg-[#0C0D0D]" style={{ width: size, height: size }}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/dog.svg" alt="DOG — watchdog" width={size} height={size} className="h-full w-full object-contain" />
+      <img src="/dog-mark.jpg" alt="DOG — watchdog" width={size} height={size} className="h-full w-full object-cover" />
     </div>
   );
 }
