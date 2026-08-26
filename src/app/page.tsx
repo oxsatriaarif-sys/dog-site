@@ -360,7 +360,7 @@ export default function Home(){
               <Mark />
               <span className="font-mono text-[12px] font-bold tracking-[0.12em]">DOG</span>
             </div>
-            <p className="mt-3 font-mono text-[12px] leading-relaxed text-[#989A95]">Surveillance industrial · Command layer · Execution engine.<br />Built with Next.js, Tailwind, and strict permission boundaries.</p>
+            <p className="mt-3 font-mono text-[12px] leading-relaxed text-[#989A95]">Surveillance industrial · Command layer · Execution engine.</p>
           </div>
           <div className="font-mono text-[11px] leading-relaxed">
             <div className="tracking-[0.12em] uppercase text-[#ECEBE5]">Docs</div>
@@ -375,8 +375,6 @@ export default function Home(){
             <div className="tracking-[0.12em] uppercase text-[#ECEBE5]">Links</div>
             <div className="mt-2 flex gap-3">
               <a href="https://x.com/" target="_blank" className="hover:text-[#ECEBE5]">X / Twitter</a>
-              <span>·</span>
-              <span>Demo only — no real execution</span>
             </div>
             <div className="mt-4 text-[10px] leading-relaxed">DOG is not a website with a dog theme. DOG is a product whose behavior feels like a watchdog. If a visual or feature does not reinforce that, it was removed.</div>
           </div>
