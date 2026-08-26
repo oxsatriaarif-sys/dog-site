@@ -10,12 +10,11 @@ const NAV = [
   { label:"DOCS", href:"#constitution" },
 ];
 
-function Mark(){
+function Mark({ size=40 }: { size?: number }){
   return (
-    <div className="h-10 w-10 border border-[#FF6B22] relative flex items-center justify-center bg-[#0C0D0D]">
-      <div className="absolute inset-[5px] border border-[#FF6B22]/30" />
-      <span className="font-mono text-[12px] font-bold tracking-[0.14em] text-[#FF6B22]">DOG</span>
-      <span className="absolute -top-1 -right-1 h-2 w-2 bg-[#FF6B22]" />
+    <div className="relative shrink-0" style={{ width: size, height: size }}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src="/dog.svg" alt="DOG — watchdog" width={size} height={size} className="h-full w-full object-contain" />
     </div>
   );
 }

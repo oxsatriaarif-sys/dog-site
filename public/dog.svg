@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+  <!-- DOG — Industrial Watchdog Mark -->
+  <!-- Outer frame — tactical -->
+  <rect x="2.5" y="2.5" width="59" height="59" rx="2" stroke="#FF6B22" stroke-width="2.2" />
+  <rect x="7" y="7" width="50" height="50" rx="1" stroke="#FF6B22" stroke-opacity="0.22" stroke-width="1" />
+  <!-- Corner signal -->
+  <rect x="48" y="2.5" width="13.5" height="13.5" fill="#FF6B22" />
+  <!-- Tag hole -->
+  <circle cx="54.8" cy="9.3" r="1.4" fill="#0C0D0D" />
+  <!-- Working dog profile — geometric, German Shepherd inspired -->
+  <!-- Ear — pointed, alert -->
+  <path d="M18 18 L28 10 L32 22 L22 24 Z" fill="#ECEBE5" />
+  <path d="M20.5 19.5 L27 12.5 L30.5 21.5 Z" fill="#0C0D0D" opacity="0.9" />
+  <!-- Head — angular -->
+  <path d="M16 24 L33 22 L38 28 L38 38 L32 44 L22 44 L14 36 L14 27 Z" fill="#ECEBE5" />
+  <!-- Snout — steel bevel -->
+  <path d="M38 30 L52 30 L52 38 L38 42 Z" fill="#ECEBE5" stroke="#242626" stroke-width="1.2" />
+  <!-- Nose -->
+  <rect x="52" y="31.5" width="3.5" height="5.2" rx="1" fill="#0C0D0D" />
+  <!-- Eye — surveillance -->
+  <rect x="26" y="28.5" width="7" height="5.5" rx="1" fill="#0C0D0D" />
+  <rect x="27.5" y="30" width="2.2" height="2.2" rx="0.6" fill="#FF6B22" />
+  <!-- Collar — tactical -->
+  <rect x="14" y="36.5" width="18" height="5.2" rx="1" fill="#0C0D0D" stroke="#FF6B22" stroke-width="1.1" />
+  <!-- Collar tag — D -->
+  <rect x="33.5" y="37.2" width="8" height="7.5" rx="1.2" fill="#FF6B22" />
+  <text x="37.5" y="43" text-anchor="middle" font-family="Geist, Inter, sans-serif" font-size="5.5" font-weight="800" fill="#0C0D0D" letter-spacing="0.04em">D</text>
+  <!-- Neck line -->
+  <path d="M18 42 L18 50 L26 50 L26 44" stroke="#ECEBE5" stroke-width="1.6" stroke-linejoin="round" />
+  <!-- Signal tick — breathing -->
+  <circle cx="48" cy="49" r="2" fill="#FF6B22" opacity="0.95" />
+  <circle cx="48" cy="49" r="4.2" stroke="#FF6B22" stroke-opacity="0.18" stroke-width="1" />
+</svg>
