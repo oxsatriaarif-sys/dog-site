@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-bg: #0C0D0D;
+  --color-bg-soft: #121414;
+  --color-bg-raised: #191B1B;
+  --color-text: #ECEBE5;
+  --color-muted: #989A95;
+  --color-signal: #FF6B22;
+  --color-border: #242626;
+  --color-danger: #8B2A1A;
+  --color-success: #2E7D5B;
+  --color-border-strong: #2E3232;
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-display: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --bg: #0C0D0D;
+  --bg-soft: #121414;
+  --bg-raised: #191B1B;
+  --text: #ECEBE5;
+  --muted: #989A95;
+  --signal: #FF6B22;
+  --border: #242626;
+  --danger: #8B2A1A;
+  --success: #2E7D5B;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #242626 #0C0D0D;
+}
+
+html {
+  background: var(--bg);
+  color: var(--text);
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ——— thin rules ——— */
+.hr-thin {
+  height: 1px;
+  background: var(--border);
+  border: 0;
+}
+
+.vr-thin {
+  width: 1px;
+  background: var(--border);
+}
+
+.border-thin {
+  border: 1px solid var(--border);
+}
+
+.border-thin-signal {
+  border: 1px solid var(--signal);
+}
+
+/* ——— focus ——— */
+*:focus-visible {
+  outline: 1px solid var(--signal);
+  outline-offset: 2px;
+}
+
+.focus-ring:focus-visible {
+  outline: 1px solid var(--signal);
+  outline-offset: 2px;
+  border-color: var(--signal);
+}
+
+/* ——— scrollbar ——— */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #242626;
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2E3232;
+}
+
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: #242626 transparent;
+}
+
+/* ——— selection ——— */
+::selection {
+  background: var(--signal);
+  color: var(--bg);
+}
+
+/* ——— motion ——— */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ——— utilities ——— */
+.label {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1;
+}
+
+.mono {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+.signal-glow {
+  box-shadow: 0 0 0 1px var(--signal), 0 0 20px color-mix(in srgb, var(--signal) 18%, transparent);
+}
+
+.grid-lines {
+  background-image:
+    linear-gradient(to right, var(--border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
